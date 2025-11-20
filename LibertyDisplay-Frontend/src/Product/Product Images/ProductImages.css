@@ -1,0 +1,13 @@
+.product-zoom-container {
+    /* Prevent scroll bleed on zoom */
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .product-zoom-img {
+    transition: transform 0.3s cubic-bezier(.4,2,.6,1);
+    will-change: transform;
+    /* Prevent drag ghost image */
+    user-select: none;
+    -webkit-user-drag: none;
+  }
