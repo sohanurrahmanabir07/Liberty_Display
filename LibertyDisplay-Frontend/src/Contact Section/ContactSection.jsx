@@ -77,7 +77,7 @@ const ContactSection = () => {
               Email Us
             </div>
             <div className="text-gray-500 text-center">
-              info@libertyairwheel.com
+              info@libertydisplay.us
             </div>
           </div>
         </div>

@@ -2,7 +2,7 @@ import React from "react";
 import { Monitor, Zap, TrendingUp, Cable } from "lucide-react";
 
 // Ideally, pass the image as a prop, but defaulting here for the demo
-import monitorImage from "../assets/image/scooter/Adobe Express - file.png";
+import monitorImage from "../assets/image/Home Page Images/Image (1).png";
 
 export default function TripleMonitorFeature() {
   return (
@@ -37,7 +37,7 @@ export default function TripleMonitorFeature() {
                     "https://images.unsplash.com/photo-1593640408182-31c70c8268f5?auto=format&fit=crop&q=80&w=2000"
                   }
                   alt="Triple Monitor Setup"
-                  className="w-full h-full object-contain mix-blend-multiply"
+                  className="w-full h-full object-cover mix-blend-multiply"
                 />
               </div>
 

@@ -1,60 +1,79 @@
 import React from "react";
-import { ArrowRight, Sparkles, CheckCircle2 } from "lucide-react";
+import image1 from "../assets/image/Home Page Images/AboutPageImage.jpeg"; // Keep your local import
 
 const StaticBanner = ({ imageUrl }) => {
-  // Fallback image if none provided - a high quality abstract 3D render
-  //   const activeImage =
-  //     imageUrl ||
-  //     "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=2564&auto=format&fit=crop";
+  // Use the prop if passed, otherwise use local image, otherwise fallback to a relevant URL
+  const activeImage =
+    imageUrl ||
+    image1 ||
+    "https://images.unsplash.com/photo-1593640408182-31c70c8268f5?auto=format&fit=crop&q=80&w=2000";
 
   return (
-    <div className="w-full max-w-7xl mx-auto my-10">
-      <div className="flex flex-col md:flex-row w-full rounded-lg overflow-hidden shadow-xl h-auto min-h-[500px]">
+    <div className="w-full md:w-[95%]    mx-auto  px-4">
+      <div className="flex flex-col lg:flex-row w-full rounded-2xl overflow-hidden shadow-2xl h-auto min-h-[550px]">
         {/* Left Side: Content (Blue Background) */}
-        <div className="w-full md:w-1/2 bg-[#32508E] p-8 md:p-16 flex flex-col justify-center text-white">
-          {/* Headline */}
-          <h2 className="text-4xl md:text-5xl font-serif font-bold leading-tight mb-6">
-            Words Which Don'tsl <br /> All the Lors
-          </h2>
+        <div className="w-full lg:w-1/2 bg-[#32508E] p-10 md:p-16 flex flex-col justify-center text-white relative">
+          {/* Decorative Element */}
+          <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none opacity-10">
+            <div className="absolute top-10 left-10 w-32 h-32 bg-white rounded-full blur-3xl"></div>
+          </div>
 
-          {/* Description */}
-          <p className="text-sm md:text-base text-gray-200 mb-8 leading-relaxed opacity-90">
-            "On the other hand, we denounce with righ blanditiis praesentium
-            voluptatum deleniti atque cor greater pleasures, or else he endures
-            worse pains."
-          </p>
+          <div className="relative z-10">
+            {/* Headline */}
+            <h2 className="text-4xl md:text-5xl font-serif font-bold leading-tight mb-6">
+              The Ultimate <br /> Mobile Workstation
+            </h2>
 
-          {/* Form Inputs */}
-          <div className="space-y-4 w-full">
-            {/* Input Field */}
-            <input
-              type="text"
-              placeholder="psum used sinci"
-              className="w-full bg-transparent border border-white/50 rounded-full px-6 py-3 text-white placeholder-gray-300 focus:outline-none focus:border-white focus:ring-1 focus:ring-white transition-all"
-            />
+            {/* Description */}
+            <p className="text-base md:text-lg text-blue-100 mb-8 leading-relaxed max-w-xl">
+              "In today's fast-paced professional landscape, maximizing
+              productivity is paramount. Transform your laptop into a powerful
+              triple-monitor setup with our 14-inch Portable Extender. One
+              cable, zero drivers, infinite possibilities."
+            </p>
 
-            {/* Button */}
-            <button className="w-full bg-white text-[#32508E] font-bold rounded-full px-6 py-3 hover:bg-gray-100 transition-colors shadow-md uppercase tracking-wide text-sm">
-              Use In Touch
-            </button>
+            {/* Form Inputs */}
+            <div className="w-full max-w-md space-y-5">
+              {/* Input Field */}
+              <div>
+                <label className="text-xs font-semibold text-blue-200 uppercase tracking-wider ml-4 mb-1 block">
+                  Get Full Specifications
+                </label>
+                <input
+                  type="email"
+                  placeholder="Enter your email address"
+                  className="w-full bg-white/10 border border-white/30 rounded-full px-8 py-4 text-white placeholder-blue-200/70 focus:outline-none focus:border-white focus:bg-white/20 focus:ring-2 focus:ring-white/50 transition-all backdrop-blur-sm"
+                />
+              </div>
+
+              {/* Button */}
+              <button className="w-full bg-white text-[#32508E] font-bold rounded-full px-8 py-4 hover:bg-gray-100 hover:scale-[1.02] transition-all duration-300 shadow-lg uppercase tracking-wide text-sm flex items-center justify-center gap-2">
+                Upgrade Your Workflow
+              </button>
+
+              <p className="text-xs text-blue-300 text-center mt-4">
+                Compatible with macOS & Windows • Instant Setup
+              </p>
+            </div>
           </div>
         </div>
 
-        {/* Right Side: Image or Gray Placeholder */}
-        <div
-          className={`w-full md:w-1/2 min-h-[300px] relative ${
-            !imageUrl ? "bg-[#C4C4C4]" : ""
-          }`}
-        >
-          {imageUrl ? (
-            <img
-              src={imageUrl}
-              alt="Promo Banner"
-              className="absolute inset-0 w-full h-full object-cover"
-            />
+        {/* Right Side: Image Area */}
+        <div className="w-full lg:w-1/2 min-h-[350px] relative bg-gray-200">
+          {activeImage ? (
+            <>
+              <img
+                src={activeImage}
+                alt="Triple Laptop Monitor Setup"
+                className="absolute inset-0 w-full h-full object-cover"
+              />
+              {/* Gradient Overlay for text readability if mobile stacks */}
+              <div className="absolute inset-0 bg-gradient-to-t from-[#32508E]/50 to-transparent lg:hidden"></div>
+            </>
           ) : (
-            /* This is the empty gray state if no prop is passed */
-            <div className="w-full h-full bg-[#C4C4C4]"></div>
+            <div className="w-full h-full bg-[#C4C4C4] flex items-center justify-center text-gray-500">
+              No Image Available
+            </div>
           )}
         </div>
       </div>

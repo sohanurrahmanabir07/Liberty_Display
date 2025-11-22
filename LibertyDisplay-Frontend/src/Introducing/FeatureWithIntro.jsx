@@ -1,5 +1,5 @@
 import React, { useMemo } from "react";
-import welcomGif from "../assets/image/gif/welcome.gif";
+import monitor from "../assets/image/Home Page Images/14 Portable Monitor (1).jpg";
 
 // Replace this with your product image import or url later if you want
 
@@ -87,9 +87,13 @@ export default function FeatureWithIntro() {
         </div>
 
         {/* GRAY IMAGE PLACEHOLDER (RIGHT) */}
-        <div className="md:w-1/2 w-full bg-gray-200 min-h-[220px] md:min-h-[360px] flex items-center justify-center">
+        <div className="md:w-1/2 w-full bg-gray-200 min-h-[220px] rounded-2xl overflow-hidden shadow-2xl md:min-h-[360px] flex items-center justify-center">
           {/* Replace this later with your actual product image if you want */}
-          {/* <img src={welcomGif} alt="Triple Monitor" className="w-full h-full object-cover" /> */}
+          <img
+            src={monitor}
+            alt="Triple Monitor"
+            className="w-full h-full object-cover"
+          />
         </div>
       </div>
     </div>

@@ -1,6 +1,8 @@
 import React, { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import image1 from "../../assets/image/Home Page Images/AboutPageImage2.jpeg";
+import image2 from "../../assets/image/Home Page Images/AboutPageImage3.jpeg";
 import {
   Monitor,
   Zap,
@@ -13,8 +15,10 @@ import {
 // Placeholder images for the Triple Monitor context
 // In a real app, these would be your imported assets
 const IMAGE_1 =
+  image1 ||
   "https://images.unsplash.com/photo-1593640408182-31c70c8268f5?auto=format&fit=crop&q=80&w=2542";
 const IMAGE_2 =
+  image2 ||
   "https://images.unsplash.com/photo-1547082299-de196ea013d6?auto=format&fit=crop&q=80&w=2370";
 
 const featuresData = [
@@ -44,7 +48,7 @@ const featuresData = [
       "Single Type-C Cable Solution",
       "Optimize Workflow Efficiency",
     ],
-    cta: "Buy Now",
+    cta: "Check Now",
   },
 ];
 
@@ -135,13 +139,15 @@ const StorySection = () => {
                   ))}
                 </div>
 
-                <button className="group flex items-center gap-2 bg-slate-900 hover:bg-indigo-600 text-white px-8 py-3.5 rounded-full font-semibold transition-all duration-300 shadow-lg hover:shadow-indigo-500/30">
-                  {feature.cta}
-                  <ArrowRight
-                    size={18}
-                    className="group-hover:translate-x-1 transition-transform"
-                  />
-                </button>
+                <a href="/all-products">
+                  <button className="group cursor-pointer flex items-center gap-2 bg-slate-900 hover:bg-indigo-600 text-white px-8 py-3.5 rounded-full font-semibold transition-all duration-300 shadow-lg hover:shadow-indigo-500/30">
+                    {feature.cta}
+                    <ArrowRight
+                      size={18}
+                      className="group-hover:translate-x-1 transition-transform"
+                    />
+                  </button>
+                </a>
               </div>
             </div>
           );

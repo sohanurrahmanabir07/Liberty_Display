@@ -92,7 +92,7 @@ export const Navbar = ({ categories, country }) => {
               {admin && isDashboard && (
                 <label
                   htmlFor="dashboard-drawer"
-                  className="drawer-button text-[#2a337b] text-xl lg:hidden"
+                  className="drawer-button text-[#2a337b] text-3xl lg:hidden"
                 >
                   ☰
                 </label>
@@ -200,7 +200,9 @@ export const Navbar = ({ categories, country }) => {
               {admin && (
                 <li
                   className={`${linkText} ${
-                    location.pathname === "/dashboard" ? activeBorder : ""
+                    location.pathname.startsWith("/dashboard")
+                      ? activeBorder
+                      : ""
                   }`}
                 >
                   <Link className={linkText} to="/dashboard">
@@ -214,7 +216,7 @@ export const Navbar = ({ categories, country }) => {
           <div className="space-x-5 md:hidden">
             <label
               htmlFor="navbar-drawer"
-              className="drawer-button lg:hidden text-[#2a337b] text-xl cursor-pointer"
+              className="drawer-button lg:hidden text-[#2a337b] text-3xl cursor-pointer"
             >
               ☰
             </label>
