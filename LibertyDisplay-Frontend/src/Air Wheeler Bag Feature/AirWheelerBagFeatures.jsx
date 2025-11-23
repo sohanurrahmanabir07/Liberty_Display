@@ -2,7 +2,7 @@ import React from "react";
 import { Monitor, Zap, TrendingUp, Cable } from "lucide-react";
 
 // Ideally, pass the image as a prop, but defaulting here for the demo
-import monitorImage from "../assets/image/Home Page Images/Image.png";
+import monitorImage from "../assets/image/Home Page Images/image-1.png";
 
 export default function TripleMonitorFeature() {
   return (
