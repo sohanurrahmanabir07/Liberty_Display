@@ -53,7 +53,7 @@ const Footer = () => {
               <FaXTwitter />
             </a>
             <a
-              href="https://www.facebook.com/libertyequipmentco"
+              href="#"
               className="w-10 h-10 flex items-center justify-center bg-gray-800/70 rounded hover:bg-[#2a337b transition"
             >
               <FaFacebookF />

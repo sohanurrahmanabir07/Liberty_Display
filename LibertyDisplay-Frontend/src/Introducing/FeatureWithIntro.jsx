@@ -52,9 +52,9 @@ export default function FeatureWithIntro() {
       {/* Features Section */}
 
       {/* Main Intro Section */}
-      <div className="w-full max-w-[1340px] mx-auto flex flex-col md:flex-row items-stretch gap-8 md:gap-12">
+      <div className="w-full max-w-[1340px] max-sm:px-4 mx-auto flex flex-col md:flex-row items-stretch gap-8 md:gap-12">
         {/* TEXT BLOCK (LEFT) */}
-        <div className="md:w-1/2 w-full px-4 py-4">
+        <div className="md:w-1/2 w-full  py-4">
           <h2 className="text-3xl md:text-4xl font-bold mb-3 text-gray-900">
             14&quot; Portable Triple Laptop Monitor
           </h2>

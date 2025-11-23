@@ -18,7 +18,7 @@ const StaticBanner = ({ imageUrl }) => {
             <div className="absolute top-10 left-10 w-32 h-32 bg-white rounded-full blur-3xl"></div>
           </div>
 
-          <div className="relative z-10">
+          <div className="relative ">
             {/* Headline */}
             <h2 className="text-4xl md:text-5xl font-serif font-bold leading-tight mb-6">
               The Ultimate <br /> Mobile Workstation

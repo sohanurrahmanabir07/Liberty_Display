@@ -35,6 +35,18 @@ export const SideNavbar = ({ categories }) => {
             </div>
           </div>
 
+          <li className="cursor-pointer">
+            <div
+              className="flex space-x-2  items-center px-3 py-2 font-bold rounded-md btn btn-soft text-[#2a337b]"
+              onClick={() => {
+                navigate("/");
+                document.getElementById("navbar-drawer").checked = false;
+              }}
+            >
+              <span>Home</span>
+            </div>
+          </li>
+
           {/* FAQ-Style Categories Section */}
           <div className="cursor-pointer  ">
             <div

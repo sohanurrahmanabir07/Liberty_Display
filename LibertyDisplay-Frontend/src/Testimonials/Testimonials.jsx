@@ -66,7 +66,7 @@ const testimonials = [
 const PrevArrow = ({ onClick }) => (
   <button
     onClick={onClick}
-    className="absolute -left-6 md:-left-10 top-1/2 -translate-y-1/2 z-10 flex items-center justify-center w-10 h-10 rounded-full bg-white text-slate-700 hover:bg-indigo-50 hover:text-indigo-600 transition-all duration-300 shadow-lg border border-slate-100"
+    className="absolute -left-6 md:-left-10 top-1/2 -translate-y-1/2 z-5 flex items-center justify-center w-10 h-10 rounded-full bg-white text-slate-700 hover:bg-indigo-50 hover:text-indigo-600 transition-all duration-300 shadow-lg border border-slate-100"
     aria-label="Previous"
   >
     <FontAwesomeIcon icon={faChevronLeft} />
@@ -76,7 +76,7 @@ const PrevArrow = ({ onClick }) => (
 const NextArrow = ({ onClick }) => (
   <button
     onClick={onClick}
-    className="absolute -right-6 md:-right-10 top-1/2 -translate-y-1/2 z-10 flex items-center justify-center w-10 h-10 rounded-full bg-white text-slate-700 hover:bg-indigo-50 hover:text-indigo-600 transition-all duration-300 shadow-lg border border-slate-100"
+    className="absolute -right-6 md:-right-10 top-1/2 -translate-y-1/2 z-5 flex items-center justify-center w-10 h-10 rounded-full bg-white text-slate-700 hover:bg-indigo-50 hover:text-indigo-600 transition-all duration-300 shadow-lg border border-slate-100"
     aria-label="Next"
   >
     <FontAwesomeIcon icon={faChevronRight} />
@@ -128,27 +128,34 @@ const TestimonialsSlider = () => {
         </div>
 
         {/* Slider */}
-        <div className="relative px-4">
+        <div className="relative md:px-4 px-2 ">
           <Slider {...settings}>
             {testimonials.map((item, idx) => (
-              <div key={idx} className="px-4 py-4 h-full">
+              <div key={idx} className="px-4 py-4">
                 <div
-                  className="bg-white rounded-2xl p-8 md:p-10 h-full min-h-[320px] flex flex-col shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-shadow duration-300 border border-slate-100"
+                  // CHANGED: Removed min-h-[320px] and h-full
+                  // ADDED: h-[450px] to enforce strict equal height
+                  // ADDED: flex flex-col justify-between to space content evenly
+                  className="bg-white rounded-2xl p-8 md:p-10 h-[450px] flex flex-col justify-between shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-shadow duration-300 border border-slate-100"
                   data-aos="fade-up"
                   data-aos-delay={idx * 100}
                 >
-                  {/* Quote Icon */}
-                  <div className="mb-6">
-                    <FaQuoteLeft className="text-indigo-200 text-4xl" />
+                  {/* Top Content Group (Quote + Text) */}
+                  <div>
+                    {/* Quote Icon */}
+                    <div className="mb-6">
+                      <FaQuoteLeft className="text-indigo-200 text-4xl" />
+                    </div>
+
+                    {/* Review Text */}
+                    {/* Added overflow-hidden line-clamp to prevent spillover if text is REALLY long */}
+                    <p className="text-slate-600 text-lg leading-relaxed mb-8 italic line-clamp-6">
+                      "{item.text}"
+                    </p>
                   </div>
 
-                  {/* Review Text */}
-                  <p className="text-slate-600 text-lg leading-relaxed mb-8 flex-grow italic">
-                    "{item.text}"
-                  </p>
-
-                  {/* User Info */}
-                  <div className="flex items-center gap-4 mt-auto border-t border-slate-100 pt-6">
+                  {/* User Info Group (Sticks to bottom) */}
+                  <div className="flex items-center gap-4 border-t border-slate-100 pt-6">
                     <img
                       src={item.avatarUrl}
                       alt={item.name}

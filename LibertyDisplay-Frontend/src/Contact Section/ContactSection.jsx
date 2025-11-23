@@ -38,7 +38,7 @@ const ContactSection = () => {
     AOS.init();
   }, []);
   return (
-    <section className="overflow-x-hidden">
+    <section className="overflow-x-hidden max-sm:px-4">
       <div className=" relative skeleton max-sm:h-[500px] overflow-hidden  ">
         <img
           src={`https://www.evokepump.com/Tpl/Home/Public/images/contact_banner.jpg`}
@@ -84,7 +84,7 @@ const ContactSection = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div
-            className="bg-white rounded overflow-x-hidden shadow-2xl overflow-hidden"
+            className="bg-white rounded overflow-x-hidden shadow-2xl overflow-hidden max-sm:h-[500px]"
             data-aos="fade-right"
             data-aos-duration="1500"
           >

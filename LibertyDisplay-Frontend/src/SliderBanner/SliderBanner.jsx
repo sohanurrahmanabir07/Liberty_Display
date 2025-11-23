@@ -56,7 +56,7 @@ export const SliderBanner = memo(() => {
   );
 
   return (
-    <div className="relative md:-mt-[50px] ">
+    <div className="relative md:-mt-[50px] max-sm:px-4 ">
       {banners.length == 0 ? (
         <div className="skeleton w-full max-sm:h-[250px] h-[650px] "></div>
       ) : (
@@ -64,7 +64,10 @@ export const SliderBanner = memo(() => {
           {banners.length > 1
             ? banners.map((item, index) => {
                 return (
-                  <div className="w-full  overflow-hidden " key={index}>
+                  <div
+                    className="w-full  skeleton   overflow-hidden "
+                    key={index}
+                  >
                     <img
                       src={item.imageUrl[0]}
                       className="w-full    "
