@@ -30,8 +30,6 @@ export const AllProducts = () => {
     }
   }, [products]);
 
-  console.log("Products", products);
-
   useEffect(() => {
     setTimeout(() => {
       setLoading(false);

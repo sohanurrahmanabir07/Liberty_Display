@@ -130,15 +130,13 @@ export const Category = ({ url }) => {
       .filter((item) => matchesSubCategory(item, selected));
   }, [filterProducts, search, subCategoriesFilter]);
 
-  console.log("Limit", limit);
-
   return (
     <div>
       <DynamicBanner item={categoryItem}></DynamicBanner>
 
       <Searching search={search} setSearch={setSearch}></Searching>
 
-      <div className="max-w-[1340px] mx-auto space-y-5">
+      <div className="max-w-[1340px] mx-auto space-y-5 max-sm:px-5">
         <section className="mx-auto my-5">
           <section className="flex justify-center items-center">
             <section className="flex md:gap-5">

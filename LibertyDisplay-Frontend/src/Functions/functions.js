@@ -4,7 +4,7 @@ export const urlConverter = (value) => {
         let url = ""
         for (let index = 0; index < arr.length; index++) {
             if (!(index == (arr.length - 1))) {
-                url += arr[index] + '-'
+                url += arr[index] + '_'
             } else {
                 url += arr[index]
             }
@@ -18,7 +18,7 @@ export const urlConverter = (value) => {
 }
 export const urlReverter = (value) => {
     if (value != null) {
-        const arr = value.split("-")
+        const arr = value.split("_")
         let url = ""
         for (let index = 0; index < arr.length; index++) {
             if (!(index == (arr.length - 1))) {
