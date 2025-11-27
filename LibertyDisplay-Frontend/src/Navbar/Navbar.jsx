@@ -228,7 +228,7 @@ export const Navbar = ({ categories, country }) => {
       {showMegaBar && (
         <div
           ref={megaBarRef}
-          className="bg-white/0   backdrop-blur-lg w-full transition-all duration-300 hidden md:block max-w-[1340px] mx-auto left-1/2 transform -translate-x-1/2 fixed top-[55px] shadow-2xl shadow-blue-300 rounded-xl z-50"
+          className="bg-white/100   backdrop-blur-lg w-full transition-all duration-300 hidden md:block max-w-[1340px] mx-auto left-1/2 transform -translate-x-1/2 fixed top-[55px] shadow-2xl shadow-blue-300 rounded-xl z-50"
         >
           <div className="flex justify-end p-2">
             <div
@@ -247,7 +247,7 @@ export const Navbar = ({ categories, country }) => {
                 <section key={index}>
                   <div className=" relative group  cursor-pointer flex flex-col items-center">
                     <div
-                      className="  duration-300 transition-all"
+                      className="  duration-300 transition-all w-[150px]  "
                       onClick={() => {
                         setShowMegaBar(false);
                         navigate(`/category/${urlConverter(item?.name)}`);
@@ -259,7 +259,7 @@ export const Navbar = ({ categories, country }) => {
                           item?.imageUrl ||
                           `https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Image_not_available.png/640px-Image_not_available.png`
                         }
-                        className="w-[150px] group-hover:rotate-6 duration-200 transition-all rounded-md  object-cover mb-2"
+                        className=" group-hover:rotate-6   w-full  duration-200 transition-all rounded-md  mb-2"
                         alt={item?.name}
                       />
                     </div>

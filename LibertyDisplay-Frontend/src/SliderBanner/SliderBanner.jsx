@@ -56,7 +56,7 @@ export const SliderBanner = memo(() => {
   );
 
   return (
-    <div className="relative md:-mt-[50px] max-sm:px-4 ">
+    <div className="relative md:-mt-[0px] max-sm:px-4 ">
       {banners.length == 0 ? (
         <div className="skeleton w-full max-sm:h-[250px] h-[650px] "></div>
       ) : (
