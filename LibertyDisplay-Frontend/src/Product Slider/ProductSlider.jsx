@@ -68,7 +68,6 @@ const ProductSlider = () => {
     []
   );
   const { products } = useOutletContext();
-  console.log("Products", products);
 
   return (
     <section className="w-full py-14 max-w-[1340px] mx-auto flex flex-col items-center bg-white">
@@ -92,10 +91,10 @@ const ProductSlider = () => {
         {products?.length ? (
           products?.length > 1 ? (
             <Slider {...settings}>
-              {products &&
+              {products.length &&
                 products.slice(0, 6).map((item, idx) => {
                   const number = Math.floor(
-                    Math.random() * products.length - 1
+                    Math.random() * (products.length - 1 - 0) + 0
                   );
 
                   return (
